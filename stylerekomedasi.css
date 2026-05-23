@@ -1,0 +1,490 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root{
+    --primary-color:#8B4513;
+    --accent-color:#D2691E;
+    --light-bg:#FFF8F0;
+    --dark-text:#2C1810;
+}
+
+body{
+    background-color:var(--light-bg);
+    color:var(--dark-text);
+    line-height:1.6;
+}
+
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+
+nav{
+    background:white;
+    padding:18px 5%;
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+}
+
+.logo{
+    font-size:1.6rem;
+
+    font-weight:bold;
+
+    color:var(--primary-color);
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+}
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    align-items:center;
+
+    gap:45px;
+}
+
+nav ul li{
+    position:relative;
+}
+
+nav ul li a{
+
+    text-decoration:none;
+
+    color:var(--dark-text);
+
+    font-weight:600;
+
+    font-size:17px;
+
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:var(--accent-color);
+}
+
+/* ========================= */
+/* DROPDOWN */
+/* ========================= */
+
+.dropdown{
+    position:relative;
+}
+
+.dropdown-btn{
+    cursor:pointer;
+}
+
+/* BOX DROPDOWN */
+
+.dropdown-menu{
+
+    position:absolute;
+
+    top:45px;
+
+    left:0;
+
+    width:260px;
+
+    background:white;
+
+    border:3px solid var(--accent-color);
+
+    border-radius:0 25px 25px 25px;
+
+    padding:10px 0;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.12);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(15px);
+
+    transition:all 0.35s ease;
+
+    z-index:999;
+}
+
+/* Saat aktif */
+
+.dropdown.active .dropdown-menu{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+}
+
+/* Isi menu */
+
+.dropdown-menu a{
+
+    display:block;
+
+    padding:14px 22px;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    border-bottom:1px solid #ececec;
+
+    color:var(--dark-text);
+
+    transition:0.3s;
+}
+
+/* Hover */
+
+.dropdown-menu a:hover{
+
+    background:#fff4eb;
+
+    color:var(--accent-color);
+
+    padding-left:30px;
+}
+
+/* Item pertama */
+
+.dropdown-title{
+
+    color:var(--accent-color) !important;
+
+    font-weight:bold;
+
+    border-bottom:2px solid var(--accent-color) !important;
+}
+
+/* Hapus border terakhir */
+
+.dropdown-menu a:last-child{
+    border-bottom:none;
+}
+.hero {
+            height: 90vh;
+            display: grid;
+            grid-template-columns: 1fr;
+            align-items: center;
+            padding: 0 8%;
+            padding-top: 100px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 strong {
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        .btn-discover {
+            display: inline-block;
+            padding: 15px 40px;
+            border: 1px solid var(--text-dark);
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            background: transparent;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-discover:hover {
+            background-color: var(--text-dark);
+            color: white;
+        }
+
+        /* Abstract Hero Background Element */
+        .hero-bg-shape {
+            position: absolute;
+            right: 8%;
+            width: 40%;
+            height: 70%;
+            background: linear-gradient(135deg, #ac8c39 0%, #ded9cb 100%);
+            z-index: 1;
+            border-radius: 20px;
+            display: none; /* Muncul di layar desktop */
+        }
+
+        /* ==========================================================================
+           4. ASYMMETRIC CONTENT CARD (INTERAKTIF & RESPONSIF)
+           ========================================================================== */
+        .main-content {
+            padding: 80px 8%;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 80px;
+            margin-top: 40px;
+        }
+
+        .culinary-card {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Pembungkus Gambar Interaktif */
+        .img-container {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 4px;
+            cursor: pointer;
+            position: relative;
+            background-color: #ddd;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .magazine-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(20%) brightness(95%);
+            transition: var(--transition-smooth);
+        }
+        /* Detail Teks */
+        .card-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-info .meta-place {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-sumatera);
+            font-weight: 700;
+            margin-bottom: 10px;
+            transition: var(--transition-smooth);
+        }
+
+        .card-info h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .card-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 30px;
+        }
+
+        .btn-text {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 700;
+            align-self: flex-start;
+            position: relative;
+        }
+
+        .btn-text::after {
+            content: ' →';
+            transition: var(--transition-smooth);
+        }
+
+        .btn-text:hover::after {
+            padding-left: 8px;
+        }
+
+        /* ==========================================================================
+           5. CLEAN MINIMALIST MODAL
+           ========================================================================== */
+        .editorial-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(26, 26, 26, 0.4);
+            backdrop-filter: blur(8px); /* Efek kaca buram kekinian */
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-box {
+            background-color: #fff;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            border-radius: 0px; /* Siku tajam formal ala majalah */
+            position: relative;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 25px; right: 30px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #aaa;
+        }
+
+        .rec-card {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+        .rec-card:last-child { border: none; }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            border-top: 1px solid #e3dfd5;
+            margin-top: 40px;
+        }
+
+        /* ==========================================================================
+           6. RESPONSIVE LAYOUT BREAKPOINTS
+           ========================================================================== */
+        @media (min-width: 992px) {
+            .hero {
+                grid-template-columns: 1.2fr 0.8fr;
+                height: 100vh;
+            }
+            .hero-bg-shape { display: block; }
+            
+            /* Layout Asimetris Majalah */
+            .culinary-card {
+                flex-direction: row;
+                gap: 80px;
+            }
+            .img-container {
+                flex: 1.1;
+                height: 460px;
+            }
+            .card-info {
+                flex: 0.9;
+            }
+        }
+
+.footer {
+  background: #3e2723;
+  color: white;
+  padding: 50px 10% 20px;
+  margin-top: 50px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-about,
+.footer-menu,
+.footer-contact {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #ffcc80;
+}
+
+.footer h3 {
+  margin-bottom: 15px;
+  color: #ffcc80;
+}
+
+.footer p {
+  line-height: 1.8;
+  font-size: 15px;
+  color: #f5f5f5;
+}
+
+.footer-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-menu ul li {
+  margin-bottom: 10px;
+}
+
+.footer-menu ul li a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.footer-menu ul li a:hover {
+  color: #ffb74d;
+  padding-left: 5px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.2);
+  margin-top: 30px;
+  padding-top: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: #ddd;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+  }
+
+  .footer {
+    padding: 40px 7%;
+  }
+}

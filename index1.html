@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuliner Tradisional Indonesia</title>
+    <style>
+        /* ==========================================================================
+           1. RESET & FONT DASAR
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fcfbf7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* ==========================================================================
+           2. HEADER & FOOTER
+           ========================================================================== */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #8B4513;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: 60px;
+        }
+
+        /* ==========================================================================
+           3. STRUKTUR KONTEN (CARD KULINER)
+           ========================================================================== */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .kuliner-card {
+            display: flex;
+            flex-direction: column; /* Tampilan default untuk HP (Vertikal) */
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        /* ==========================================================================
+           4. FITUR GAMBAR RESPONSIF & INTERAKTIF (EFEK TEKAN)
+           ========================================================================== */
+        .image-wrapper {
+            overflow: hidden; /* Menyembunyikan gambar yang meluap saat membesar */
+            width: 100%;
+            height: 300px;
+            position: relative;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent; /* Menghilangkan kotak biru saat ditekan di HP */
+        }
+
+        .responsive-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Gambar tetap proporsional dan tidak gepeng */
+            transition: transform 0.2s ease, filter 0.2s ease;
+        }
+
+        /* Efek saat gambar disorot kursor (Hover) */
+        .image-wrapper:hover .responsive-img {
+            transform: scale(1.04); /* Gambar membesar halus */
+            filter: brightness(90%); /* Sedikit menggelap agar dramatis */
+        }
+
+        /* Efek utama saat gambar DITEKAN/DIKLIK (Active) */
+        .image-wrapper:active .responsive-img {
+            transform: scale(0.97); /* Gambar mengecil/mendem ke dalam saat ditekan */
+            filter: brightness(80%);
+        }
+
+        /* ==========================================================================
+           5. TEKS & TOMBOL
+           ========================================================================== */
+        .content {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .content p {
+            color: #666;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .btn-resep {
+            display: inline-block;
+            align-self: flex-start;
+            padding: 12px 30px;
+            background-color: #c2a679;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn-resep:hover {
+            background-color: #a88f65;
+        }
+
+        .btn-resep:active {
+            transform: scale(0.95);
+        }
+
+        /* ==========================================================================
+           6. RESPONSIVE LAYOUT (UNTUK LAPTOP / LAYAR LEBAR)
+           ========================================================================== */
+        @media (min-width: 768px) {
+            .kuliner-card {
+                flex-direction: row; /* Berubah menjadi horizontal (sejajar kesamping) */
+            }
+
+            .image-wrapper {
+                flex: 1;
+                height: 400px; /* Lebih tinggi di layar laptop */
+            }
+
+            .content {
+                flex: 1;
+                padding: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Cita Rasa Nusantara</h1>
+        <p>Menjelajahi Kelezatan Kuliner Tradisional Indonesia</p>
+    </header>
+
+    <main class="container">
+        
+        <section class="kuliner-card">
+            <div class="image-wrapper">
+                <img src="mie1.jpg" alt="Rendang Minangkabau" class="responsive-img">
+            </div>
+            <div class="content">
+                <h2>Rendang Minangkabau</h2>
+                <p>
+                    Rendang atau <em>*randang*</em> diperkirakan telah lahir sejak abad ke-16 di tanah Minangkabau. 
+                    Kuliner legendaris ini tercipta dari kebutuhan masyarakat Minang pra-modern yang sering melakukan tradisi merantau jauh. 
+                    Melalui teknik memasak <em>*marandang*</em>—yakni mengaduk bumbu santan dan rempah secara perlahan hingga mengering—daging 
+                    dapat bertahan berbulan-bulan tanpa basi selama perjalanan.
+                </p>
+                <a href="#" class="btn-resep">Resep</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Kuliner Tradisional Indonesia. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
