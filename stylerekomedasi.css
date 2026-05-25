@@ -189,11 +189,15 @@ nav ul li a:hover{
 .hero {
             height: 90vh;
             display: grid;
+            color: white;
             grid-template-columns: 1fr;
             align-items: center;
             padding: 0 8%;
             padding-top: 100px;
             position: relative;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('https://i.pinimg.com/1200x/ec/47/04/ec47041a4105ac622e4484dc5169ec66.jpg')
+    center/cover;
         }
 
         .hero h1 {
@@ -202,6 +206,7 @@ nav ul li a:hover{
             line-height: 1.2;
             margin-bottom: 25px;
             letter-spacing: -1px;
+            
         }
 
         .hero h1 strong {
